@@ -1,0 +1,26 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $roboto;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  background: color(bg-dark);
+}
+
+#wrapper {
+  overflow-x: hidden;
+  position: relative;
+}

@@ -1,0 +1,11 @@
+@import "./helpers/parameters";
+@import "./helpers/mixins";
+
+@import "./base/global";
+
+@import "./components/navbar";
+@import "./components/home";
+@import "./components/projects";
+@import "./components/services";
+@import "./components/contact";
+@import "./components/footer";

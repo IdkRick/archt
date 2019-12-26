@@ -1,0 +1,129 @@
+header {
+  background: color(bg-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  position: fixed;
+  width: 100%;
+  z-index: 95;
+
+  nav {
+    max-width: 1280px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease-out;
+
+    &.active {
+      height: 60px;
+    }
+
+    @include mobileL {
+      height: 60px;
+    }
+
+    .logo {
+      color: color(white);
+      font-size: 1.5rem;
+      font-weight: weight(bold);
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+
+      @include tablet {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        background: color(bg-dark);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        z-index: 5;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-100vh);
+        transition: transform 0.4s ease, opacity 0.2s ease;
+
+        &.active {
+          opacity: 1;
+          pointer-events: all;
+          transform: translateY(0%);
+        }
+
+        @include mobileL {
+          top: 60px;
+        }
+      }
+
+      li:first-child {
+        @include tablet {
+          border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+      }
+
+      li {
+        @include tablet {
+          padding: 25px 0 25px 5%;
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: 80px;
+      }
+
+      li,
+      li:not(:last-child) {
+        @include tablet {
+          margin: 0;
+          opacity: 1;
+        }
+      }
+
+      li a {
+        color: color(white);
+        font-size: 1rem;
+        font-weight: weight(regular);
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.1s ease-out;
+        @include link-border;
+
+        @include tablet {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .burger {
+      cursor: pointer;
+      display: none;
+      z-index: 10;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    .burger div {
+      width: 25px;
+      height: 2px;
+      margin: 5px;
+      background: color(white);
+      transition: all 0.5s ease;
+    }
+
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(0px, 5px);
+    }
+    .toggle .line2 {
+      transform: rotate(45deg) translate(0px, -5px);
+    }
+  }
+}

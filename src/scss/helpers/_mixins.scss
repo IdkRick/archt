@@ -1,0 +1,137 @@
+//*Border link
+@mixin link-border {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    height: 1px;
+    width: 0%;
+    background: color(white);
+    transition: opacity 0.25s ease, transform 0.25s ease,
+      width 0.3s cubic-bezier(0.68, 0.05, 0.46, 1.02), left 0.2s 0.2s ease-out;
+  }
+
+  &:after {
+    z-index: 10;
+    width: 30%;
+    background: color(bg-dark);
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+    left: 100%;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+}
+
+//*Button
+@mixin btn-primary {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
+  color: color(txt-light);
+  background: none;
+  border: 0;
+  box-shadow: inset 0 0 0 1px rgba(color(txt-light), 0.6);
+  letter-spacing: 0.0992rem;
+  transition: color 0.25s;
+
+  &:hover,
+  &:focus {
+    color: color(white);
+  }
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before,
+  &:after {
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover:before,
+  &:hover:after,
+  &:focus:before,
+  &:focus:after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover:before,
+  &:focus:before {
+    border-top-color: color(white);
+    border-right-color: color(white);
+    transition: width 0.1s ease-out, height 0.15s ease-out 0.15s;
+  }
+
+  &:hover:after,
+  &:focus:after {
+    border-bottom-color: color(white);
+    border-left-color: color(white);
+    transition: border-color 0s ease-out 0.3s, width 0.15s ease-out 0.3s,
+      height 0.15s ease-out 0.45s;
+  }
+}
+
+//*Media Queries
+@mixin desktop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobileL {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin mobileM {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobileS {
+  @media (max-width: 320px) {
+    @content;
+  }
+}

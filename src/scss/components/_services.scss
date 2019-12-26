@@ -1,0 +1,56 @@
+.services-section {
+  background: color(bg-light);
+  padding: 60px 0 80px;
+
+  .line-top {
+    width: 250px;
+    height: 1px;
+    background: color(black);
+    margin: 0 auto 60px;
+  }
+
+  .wrapper {
+    max-width: 1280px;
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 6rem;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+
+      @include mobileL {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service {
+      @include mobileL {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-family: $playfair;
+        font-weight: weight(light);
+        margin-bottom: 10px;
+
+        @include mobileL {
+          font-size: 1.75rem;
+        }
+      }
+
+      p {
+        color: color(txt-dark);
+        @include mobileL {
+          font-size: 0.9rem;
+
+          @include mobileS {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

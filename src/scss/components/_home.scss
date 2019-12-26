@@ -1,0 +1,109 @@
+.home-section {
+  margin-top: 80px;
+
+  @include mobileL {
+    margin-top: 60px;
+  }
+  .wrapper {
+    max-width: 1280px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+
+    h1 {
+      color: color(white);
+      font-size: 6rem;
+      padding: 100px 0 20px;
+
+      @include tablet {
+        font-size: 5rem;
+
+        @include mobileL {
+          font-size: 4rem;
+
+          @include mobileM {
+            font-size: 3rem;
+
+            @include mobileS {
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      color: color(txt-light);
+      font-size: 1.75rem;
+      font-family: $playfair;
+      margin-bottom: 180px;
+      letter-spacing: 1px;
+      width: 60%;
+
+      @include tablet {
+        font-size: 1.4rem;
+        width: 90%;
+
+        @include mobileL {
+          font-size: 1.2rem;
+          width: 100%;
+
+          @include mobileM {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .triangle {
+      position: absolute;
+      top: -35px;
+      left: 220px;
+      z-index: -1;
+
+      @include tablet {
+        top: -50px;
+        left: 135px;
+
+        @include mobileL {
+          top: -60px;
+          left: 60px;
+          transform: scale(0.9);
+
+          @include mobileM {
+            transform: scale(0.7);
+
+            top: -70px;
+            left: -10px;
+
+            @include mobileS {
+              transform: scale(0.6);
+
+              top: -80px;
+              left: -45px;
+            }
+          }
+        }
+      }
+    }
+
+    .square {
+      position: absolute;
+      top: 80%;
+      right: -10%;
+      z-index: -1;
+      transform: rotate(198deg);
+
+      @include tablet {
+        top: 120%;
+        right: -20%;
+
+        @include mobileL {
+          top: 130%;
+          left: -50%;
+          transform: rotate(160deg);
+        }
+      }
+    }
+  }
+}

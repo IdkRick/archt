@@ -1,0 +1,136 @@
+.contact-section {
+  padding: 90px 0;
+
+  @include tablet {
+    padding: 60px 0;
+
+    @include mobileL {
+      padding: 40px 0;
+    }
+  }
+
+  .wrapper {
+    max-width: 1280px;
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .left {
+    position: relative;
+    justify-self: center;
+    align-self: flex-start;
+    margin-top: 110px;
+
+    @include tablet {
+      margin: 0 0 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: color(white);
+      font-size: 4rem;
+      font-weight: weight(light);
+      font-family: $playfair;
+      margin-bottom: 20px;
+
+      @include tablet {
+        font-size: 3rem;
+
+        @include mobileL {
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: color(txt-light);
+      font-weight: weight(light);
+
+      @include tablet {
+        font-size: 1.25rem;
+
+        @include mobileM {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .triangle {
+      position: absolute;
+      top: -165px;
+      left: 0;
+      z-index: -1;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .right {
+    form {
+      fieldset {
+        border: none;
+        display: flex;
+        flex-direction: column;
+
+        label {
+          color: color(txt-light);
+          font-size: 1rem;
+          font-weight: weight(light);
+          margin: 20px 0 10px;
+        }
+
+        input {
+          color: color(txt-light);
+          background: none;
+          border: 1px solid rgba(color(txt-light), 0.6);
+          padding: 15px 8px;
+          max-width: 80%;
+          width: 100%;
+          transition: all 0.2s ease;
+
+          @include tablet {
+            max-width: 100%;
+          }
+
+          &:focus {
+            border: 1px solid color(white);
+          }
+        }
+
+        textarea {
+          color: color(txt-light);
+          background: none;
+          border: 1px solid rgba(color(txt-light), 0.6);
+          width: 80%;
+          height: 200px;
+          font-family: $roboto;
+          margin-bottom: 20px;
+          padding: 10px 8px;
+          resize: none;
+
+          @include tablet {
+            width: 100%;
+          }
+
+          &:focus {
+            border: 1px solid color(white);
+          }
+        }
+      }
+
+      .btn {
+        @include btn-primary;
+      }
+    }
+  }
+}
